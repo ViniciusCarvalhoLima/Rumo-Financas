@@ -1081,7 +1081,20 @@ tbody tr:hover {
 
 .mes-final td { background: var(--primary-lighter); }
 
-.table-sim { max-width: 520px; }
+/* Tabela da simulação: ocupa 100% da largura do card.
+   Coluna "Mês" compacta à esquerda e "Valor acumulado" encostada
+   na borda direita, alinhada com o cabeçalho. */
+.table-sim {
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Largura fixa: em table-layout:fixed o navegador não resolve
+   clamp()/% para colunas, então a coluna cairia em 50%/50%. */
+.table-sim th:first-child,
+.table-sim td:first-child {
+  width: 88px;
+}
 
 .table-sim th:last-child,
 .table-sim td:last-child { text-align: right; }

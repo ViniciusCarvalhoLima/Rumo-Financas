@@ -108,8 +108,7 @@ export default function Transacoes() {
           Transações
         </h1>
         <p className="page-subtitle">
-          Registre rendas e gastos, consulte o histórico e acompanhe os totais
-          consolidados.
+          Registre rendas e gastos, consulte o histórico e acompanhe os totais.
         </p>
       </header>
 
