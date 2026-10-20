@@ -1,0 +1,22 @@
+{
+  "saldo": 0,
+  "totalRenda": 0,
+  "totalGasto": 0,
+  "transacoes": [
+    {
+      "id": 1,
+      "tipo": "Renda",
+      "categoria": "salario",
+      "valor": 0,
+      "data": "01/01/2026"
+    },
+    {
+      "id": 2,
+      "tipo": "Gasto",
+      "categoria": "aluguel",
+      "valor": 0,
+      "data": "01/01/2026"
+    }
+  ],
+  "proximoId": 3
+}
