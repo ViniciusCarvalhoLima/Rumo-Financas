@@ -4,9 +4,12 @@
   "description": "",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node dist/main.js",
-    "dev": "ts-node-dev src/main.ts",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "tsc",
+    "start": "npm run build && node dist/server.js",
+    "dev": "ts-node-dev src/server.ts",
+    "server": "ts-node-dev src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +22,7 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.8.0",
     "ts-node-dev": "^2.0.0",
