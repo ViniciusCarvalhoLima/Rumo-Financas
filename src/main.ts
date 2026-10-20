@@ -19,7 +19,6 @@ interface EstadoApp {
   saldo: number;
   totalRenda: number;
   totalGasto: number;
-  valorInvestido: number;
   transacoes: Transacao[];
   proximoId: number;
 }
@@ -30,7 +29,6 @@ const estado: EstadoApp = {
   saldo: 0,
   totalRenda: 0,
   totalGasto: 0,
-  valorInvestido: 0,
   transacoes: [],
   proximoId: 1,
 };
@@ -43,8 +41,6 @@ function carregarDados() {
       if (dados.saldo !== undefined) estado.saldo = dados.saldo;
       if (dados.totalRenda !== undefined) estado.totalRenda = dados.totalRenda;
       if (dados.totalGasto !== undefined) estado.totalGasto = dados.totalGasto;
-      if (dados.valorInvestido !== undefined)
-        estado.valorInvestido = dados.valorInvestido;
       if (dados.transacoes) estado.transacoes = dados.transacoes;
       if (dados.proximoId !== undefined) estado.proximoId = dados.proximoId;
       console.log("Dados carregados com sucesso.");
@@ -210,8 +206,6 @@ function simularInvestimento(valor: number, meses: number) {
     return;
   }
 
-  estado.valorInvestido += valor;
-  salvarDados();
   const taxaSelic = 0.014;
   console.log("\n===== SIMULAÇÃO SELIC =====");
   console.log(`Valor investido: R$${valor.toFixed(2)}`);
