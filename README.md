@@ -1,4 +1,4 @@
-# Saas Financeiro
+# Rumo
 
 Sistema financeiro local em **TypeScript**, com **interface web** (React + Vite) e **API REST** (Express), para cadastro de receitas, despesas, consulta de saldo, extrato e simulação de investimentos.
 

@@ -1,5 +1,5 @@
 ﻿/* ============================================
-   SaaS Financeiro — Design System
+   Rumo — Design System
    ============================================ */
 
 :root {
@@ -269,6 +269,15 @@ h4 {
   color: #fff;
   box-shadow: var(--shadow-primary);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Logo monocromatica (preta) sobre o fundo gradiente: invert paraBranco. */
+.brand-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .brand-text {

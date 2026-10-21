@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 export type Tema = "claro" | "escuro";
 
-export const CHAVE_TEMA = "tema-saas-financeiro";
+export const CHAVE_TEMA = "tema-rumo";
 
 /** Lê a preferência salva; `null` quando ausente ou indisponível (ex.: modo privado). */
 export function lerTemaSalvo(): Tema | null {

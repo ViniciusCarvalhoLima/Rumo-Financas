@@ -11,7 +11,6 @@ import {
   IconDashboard,
   IconList,
   IconTrend,
-  IconWallet,
 } from "./components/Icons";
 import ThemeToggle from "./components/ThemeToggle";
 import SaldoBadge from "./components/SaldoBadge";
@@ -24,10 +23,10 @@ export default function App() {
           <div className="container navbar-inner">
             <NavLink to="/" className="navbar-brand">
               <span className="brand-mark">
-                <IconWallet size={19} />
+                <img src="/logo.png" alt="" aria-hidden="true" className="brand-logo" />
               </span>
               <span className="brand-text">
-                SaaS Financeiro
+                Rumo
                 <small>Controle financeiro local</small>
               </span>
             </NavLink>
@@ -83,7 +82,7 @@ export default function App() {
 
         <footer className="footer">
           <div className="container footer-inner">
-            <span>SaaS Financeiro — dados persistidos localmente em data.json</span>
+            <span>Rumo — dados persistidos localmente em data.json</span>
             <span>React + Express + Vite</span>
           </div>
         </footer>
