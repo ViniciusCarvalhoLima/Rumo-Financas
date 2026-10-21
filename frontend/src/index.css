@@ -1,63 +1,13 @@
 ﻿/* ============================================
-   Rumo — Design System
+   index.css — entrada consolidada (Design System Rumo)
    ============================================ */
 
-:root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-darker: #4338ca;
-  --primary-light: #eef2ff;
-  --primary-lighter: #f5f3ff;
-  --primary-text: #4338ca;
-  --primary-border: #c7d2fe;
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
-
-  --success: #10b981;
-  --success-dark: #059669;
-  --success-light: #ecfdf5;
-  --success-border: #a7f3d0;
-
-  --danger: #ef4444;
-  --danger-dark: #dc2626;
-  --danger-light: #fef2f2;
-  --danger-border: #fecaca;
-
-  --text: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-
-  --bg: #f1f5f9;
-  --bg-gradient: radial-gradient(circle at 0% 0%, #eef2ff 0%, transparent 45%),
-    radial-gradient(circle at 100% 0%, #fdf4ff 0%, transparent 40%), #f8fafc;
-  --card: #ffffff;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --surface: rgba(255, 255, 255, 0.82);
-  --surface-soft: rgba(255, 255, 255, 0.6);
-  --nav-pill: #f1f5f9;
-  --selection-bg: #6366f1;
-  --selection-text: #ffffff;
-  --table-head: #f8fafc;
-  --skeleton-from: #eef2f7;
-  --skeleton-to: #e2e8f0;
-
-
-  --radius-sm: 8px;
-  --radius: 12px;
-  --radius-lg: 16px;
-
-  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.07), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow: 0 4px 12px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(15, 23, 42, 0.05);
-  --shadow-primary: 0 8px 24px rgba(99, 102, 241, 0.28);
-
-  --ring: 0 0 0 3px rgba(99, 102, 241, 0.16);
-  --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
-}
+@import url("./base.css");
+@import url("./layout.css");
+@import url("./components.css");
+@import url("./pages.css");
+@import url("./animations.css");
+@import url("./responsive.css");
 
 
 /* ============================================
@@ -666,7 +616,7 @@ h4 {
   transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ratio-renda { background: linear-gradient(90deg, #10b981, #059669); }
+.ratio-sobra { background: linear-gradient(90deg, #10b981, #059669); }
 .ratio-gasto { background: linear-gradient(90deg, #fb7185, #e11d48); }
 
 .ratio-legend {
@@ -691,7 +641,7 @@ h4 {
   flex-shrink: 0;
 }
 
-.legend-dot.renda { background: var(--success); }
+.legend-dot.sobra { background: var(--success); }
 .legend-dot.gasto { background: var(--danger); }
 
 /* ============================================

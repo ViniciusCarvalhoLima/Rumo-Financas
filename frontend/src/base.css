@@ -1,0 +1,141 @@
+
+
+[data-tema="escuro"] {
+  --primary: #818cf8;
+  --primary-dark: #6366f1;
+  --primary-darker: #4f46e5;
+  --primary-light: rgba(99, 102, 241, 0.16);
+  --primary-lighter: rgba(99, 102, 241, 0.09);
+  --primary-text: #a5b4fc;
+  --primary-border: rgba(129, 140, 248, 0.32);
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+
+  --success: #34d399;
+  --success-dark: #6ee7b7;
+  --success-light: rgba(16, 185, 129, 0.14);
+  --success-border: rgba(52, 211, 153, 0.3);
+
+  --danger: #f87171;
+  --danger-dark: #fca5a5;
+  --danger-light: rgba(239, 68, 68, 0.14);
+  --danger-border: rgba(248, 113, 113, 0.3);
+
+  --text: #e8edf7;
+  --text-secondary: #a3b0c6;
+  --text-muted: #7c8aa5;
+
+  --bg: #0b1120;
+  --bg-gradient: radial-gradient(circle at 0% 0%, rgba(79, 70, 229, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(147, 51, 234, 0.14) 0%, transparent 40%), #0b1120;
+  --card: #111a2e;
+  --border: #23304a;
+  --border-strong: #35435f;
+  --surface: rgba(17, 26, 46, 0.82);
+  --surface-soft: rgba(17, 26, 46, 0.6);
+  --nav-pill: #16203a;
+  --selection-bg: #4f46e5;
+  --selection-text: #e8edf7;
+  --table-head: #16203a;
+  --skeleton-from: #1b2540;
+  --skeleton-to: #243252;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.6), 0 4px 10px rgba(0, 0, 0, 0.4);
+  --shadow-primary: 0 8px 24px rgba(99, 102, 241, 0.36);
+
+  --ring: 0 0 0 3px rgba(129, 140, 248, 0.28);
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+[data-tema] .card,
+[data-tema] .stat-card,
+[data-tema] .navbar,
+[data-tema] .footer,
+[data-tema] .form-input,
+[data-tema] .navbar-links,
+[data-tema] .mensagem,
+[data-tema] .badge,
+[data-tema] .table-container,
+[data-tema] .result-item,
+[data-tema] .theme-toggle,
+[data-tema] thead th,
+[data-tema] tbody td {
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+

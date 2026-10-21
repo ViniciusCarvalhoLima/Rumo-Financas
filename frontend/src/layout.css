@@ -1,0 +1,158 @@
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.main {
+  flex: 1;
+  padding: 2.25rem 0 3.5rem;
+  animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 68px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  font-size: 1.075rem;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--primary-gradient);
+  color: #fff;
+  box-shadow: var(--shadow-primary);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Logo monocromatica (preta) sobre o fundo gradiente: invert paraBranco. */
+.brand-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text small {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--nav-pill);
+  padding: 0.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.navbar-link:hover {
+  color: var(--text);
+  background: var(--card);
+  box-shadow: var(--shadow-xs);
+}
+
+.navbar-link.active {
+  color: #fff;
+  background: var(--primary-gradient);
+  box-shadow: var(--shadow-primary);
+}
+
+.navbar-link svg {
+  flex-shrink: 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+
+
+
+.page-header {
+  margin-bottom: 1.75rem;
+}
+
+.page-title {
+  font-size: 1.85rem;
+  letter-spacing: -0.035em;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+  max-width: 62ch;
+}
+
+

@@ -76,11 +76,21 @@ export default function Dashboard() {
     );
   }
 
-  const total = saldo.totalRenda + saldo.totalGasto;
-  const pctRenda = total > 0 ? (saldo.totalRenda / total) * 100 : 0;
-  const pctGasto = total > 0 ? (saldo.totalGasto / total) * 100 : 0;
+  // A base da composição é a RENDA: os gastos e o saldo restante dividem
+  // 100% dela. Usar (renda + gasto) contaria o mesmo dinheiro duas vezes.
+  const totalRenda = saldo.totalRenda;
+  const pctGasto = totalRenda > 0 ? (saldo.totalGasto / totalRenda) * 100 : 0;
+  // O saldo é derivado de (renda - gasto) para que a barra sempre feche em 100%,
+  // mesmo que o data.json seja editado manualmente.
+  const sobra = totalRenda - saldo.totalGasto;
+  const pctSobra = totalRenda > 0 ? (sobra / totalRenda) * 100 : 0;
   const taxaPoupanca =
     saldo.totalRenda > 0 ? (saldo.saldo / saldo.totalRenda) * 100 : 0;
+
+  // A largura da barra é limitada a 0-100% para não gerar valores inválidos
+  // quando os gastos ultrapassam a renda.
+  const larguraGasto = Math.min(100, Math.max(0, pctGasto));
+  const larguraSobra = Math.min(100, Math.max(0, pctSobra));
 
   const recentes = [...transacoes].slice(-5).reverse();
 
@@ -145,23 +155,24 @@ export default function Dashboard() {
         <div className="card-header">
           <div>
             <h2 className="card-title">Composição das receitas e despesas</h2>
-            <p>Proporção entre rendas e gastos registrados.</p>
+            <p>Como sua renda foi distribuída entre gastos e saldo.</p>
           </div>
         </div>
 
         <div className="ratio-bar">
-          <span className="ratio-renda" style={{ width: `${pctRenda}%` }} />
-          <span className="ratio-gasto" style={{ width: `${pctGasto}%` }} />
+          <span className="ratio-gasto" style={{ width: `${larguraGasto}%` }} />
+          <span className="ratio-sobra" style={{ width: `${larguraSobra}%` }} />
         </div>
 
         <div className="ratio-legend">
           <span>
-            <i className="legend-dot renda" />
-            Rendas — {formatarMoeda(saldo.totalRenda)} ({pctRenda.toFixed(1)}%)
+            <i className="legend-dot gasto" />
+            Gastos — {formatarMoeda(saldo.totalGasto)} ({pctGasto.toFixed(1)}% da
+            renda)
           </span>
           <span>
-            <i className="legend-dot gasto" />
-            Gastos — {formatarMoeda(saldo.totalGasto)} ({pctGasto.toFixed(1)}%)
+            <i className="legend-dot sobra" />
+            Saldo — {formatarMoeda(sobra)} ({pctSobra.toFixed(1)}% da renda)
           </span>
         </div>
       </section>
